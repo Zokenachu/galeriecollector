@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie Collector</title>
+  <title>La Galerie COllector</title>
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Password Screen -->
   <div id="password-screen">
     <video id="background-video" autoplay loop muted playsinline>
-      <source src="video.mp4" type="video/mp4">
+      <source src="your-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <h1>La Galerie Collector</h1>
-    <input type="password" id="password-input" placeholder="Mot de passe">
-    <button id="submit-password">Accéder</button>
+    <h1>Enter Password</h1>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="checkPassword()">Accéder</button>
     <p id="error-message"></p>
   </div>
 
-  <div id="gallery" style="display: none;">
+  <!-- Gallery Screen (Hidden initially) -->
+  <div id="gallery-screen" style="display: none;">
     <header>
-      <h1>La Galerie Collector</h1>
-      <h3>Par Kenzo</h3>
+      <h1>My Gallery</h1>
     </header>
     <div class="gallery-grid">
       <img src="axel.jpg" alt="Axel">
