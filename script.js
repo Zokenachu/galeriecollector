@@ -48,3 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+function checkPassword() {
+  var password = document.getElementById("password").value;
+  if (password === "yourpassword") {
+    document.getElementById("password-screen").style.display = "none";
+    document.getElementById("gallery-screen").style.display = "block";
+  } else {
+    document.getElementById("error-message").textContent = "Incorrect password. Try again.";
+  }
+}
