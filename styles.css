@@ -1,12 +1,14 @@
+/* General styles for the page */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  overflow: auto;
 }
 
+/* Password screen styles */
 #password-screen {
   display: flex;
   flex-direction: column;
@@ -42,7 +44,7 @@ body {
 #password-screen button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #303030;
+  background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 5px;
@@ -51,7 +53,7 @@ body {
 }
 
 #password-screen button:hover {
-  background-color: #282828;
+  background-color: #0056b3;
 }
 
 #error-message {
@@ -60,6 +62,7 @@ body {
   z-index: 20;
 }
 
+/* Background video styling */
 #background-video {
   position: absolute;
   top: 0;
@@ -70,6 +73,7 @@ body {
   z-index: 1;
 }
 
+/* Dark overlay filter */
 #password-screen::after {
   content: '';
   position: absolute;
@@ -77,17 +81,21 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
 
-#gallery {
+/* Gallery Screen - Make it initially hidden */
+#gallery-screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   height: auto;
+}
+
+/* Gallery grid styles */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -101,18 +109,21 @@ body {
   max-height: 80vh;
 }
 
+/* Square image styling */
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 15px;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
+/* Lightbox styles */
 #lightbox {
   position: fixed;
   top: 0;
@@ -145,11 +156,4 @@ body {
 
 #close-lightbox:hover {
   color: red;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-  background-color: #007BFF;
-  color: white;
 }
