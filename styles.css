@@ -81,15 +81,25 @@ body {
   z-index: 2;
 }
 
+#gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: auto;
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
   padding: 20px;
-  margin: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 1200px;
   height: auto;
   box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .gallery-grid img {
