@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="password-screen">
+    <h1>La Galerie Collector</h1>
+    <input type="password" id="password-input" placeholder="Mot de passe">
+    <button id="submit-password">Confirmer</button>
+    <p id="error-message"></p>
+  </div>
+
+  <div id="gallery" style="display: none;">
+    <header>
+      <h1>La Galerie Collector</h1>
+      <h3>Par Kenzo</h3>
+    </header>
+    <div class="gallery-grid">
+      <img src="axel.jpg" alt="Axel Le Maxi BG">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="axel.jpg" alt="Axel Le Maxi BG">
+      <img src="axel.jpg" alt="Axel Le Maxi BG">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="axel.jpg" alt="Axel Le Maxi BG">
+      <img src="axel.jpg" alt="Axel Le Maxi BG">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="image.jpg" alt="Gallery Image">
+      <img src="axel.jpg" alt="Axel Le Maxi BG">
+    </div>
+  </div>
+  <div id="lightbox" class="hidden">
+    <span id="close-lightbox">&times;</span>
+    <img id="lightbox-image" src="" alt="Expanded Image">
+  </div>  
+</body>
+</html>
