@@ -1,12 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
+/* General styles for the page */
+html, body {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%; /* Ensure full screen height */
+  width: 100%;  /* Ensure full screen width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Password screen styles */
 #password-screen {
   display: flex;
   flex-direction: column;
@@ -23,85 +24,34 @@ body {
   position: relative;
 }
 
-#password-screen h1 {
-  margin-bottom: 20px;
-  color: white;
-  z-index: 20;
-}
-
-#password-screen input {
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 10px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  z-index: 20;
-}
-
-#password-screen button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #303030;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 20;
-}
-
-#password-screen button:hover {
-  background-color: #282828;
-}
-
-#error-message {
-  color: red;
-  margin-top: 10px;
-  z-index: 20;
-}
-
-#background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-#password-screen::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 2;
-}
-
+/* Gallery Screen */
 #gallery {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  height: auto;
+  width: 100%;
+  height: 100vh;  /* Ensure gallery takes full height */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  overflow: auto; /* Allow scrolling if content overflows */
+}
 
+/* Gallery grid styles */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
-  padding: 20px;
   width: 100%;
-  max-width: 1200px;
-  height: auto;
+  padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto;
-  max-height: 80vh;
+  height: auto;
+  max-width: 1200px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 80vh; /* Optional: Limit the height of the gallery for scrolling */
 }
 
+/* Square image styling */
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -110,10 +60,12 @@ body {
   transition: transform 0.3s;
 }
 
+/* Hover effect for images */
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
+/* Lightbox styles */
 #lightbox {
   position: fixed;
   top: 0;
@@ -148,9 +100,13 @@ body {
   color: red;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  background-color: #007BFF;
-  color: white;
+/* Optional: Hide white borders on mobile */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+
+  #gallery-screen {
+    height: 100%;
+  }
 }
