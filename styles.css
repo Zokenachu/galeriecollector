@@ -1,10 +1,11 @@
 /* General styles for the page */
-html, body {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure full screen height */
-  width: 100%;  /* Ensure full screen width */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: #f4f4f4;
+  height: 100%;
+  overflow: auto; /* Enable scrolling on the page */
 }
 
 /* Password screen styles */
@@ -21,20 +22,77 @@ html, body {
   z-index: 10;
   text-align: center;
   color: white;
-  position: relative;
+  position: relative; /* Allows the video to sit behind this content */
 }
 
-/* Gallery Screen */
-#gallery {
+#password-screen h1 {
+  margin-bottom: 20px;
+  color: white;
+  z-index: 20; /* Ensure text is on top of video */
+}
+
+#password-screen input {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 20;
+}
+
+#password-screen button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#password-screen button:hover {
+  background-color: #0056b3;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+  z-index: 20;
+}
+
+/* Background video styling */
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Place the video behind the content */
+}
+
+/* Dark overlay filter */
+#password-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the video */
+  z-index: 2; /* Overlay sits on top of the video */
+}
+
+/* Gallery Screen - Make it initially hidden */
+#gallery-screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  width: 100%;
-  height: 100vh;  /* Ensure gallery takes full height */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
-  overflow: auto; /* Allow scrolling if content overflows */
+  height: auto; /* Allow it to grow with content */
 }
 
 /* Gallery grid styles */
@@ -42,11 +100,11 @@ html, body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
-  width: 100%;
   padding: 20px;
-  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px; /* Maximum width for gallery */
   height: auto;
-  max-width: 1200px;
+  box-sizing: border-box;
   overflow-y: auto; /* Enable vertical scrolling */
   max-height: 80vh; /* Optional: Limit the height of the gallery for scrolling */
 }
@@ -98,15 +156,4 @@ html, body {
 
 #close-lightbox:hover {
   color: red;
-}
-
-/* Optional: Hide white borders on mobile */
-@media (max-width: 768px) {
-  body, html {
-    overflow-x: hidden;
-  }
-
-  #gallery-screen {
-    height: 100%;
-  }
 }
