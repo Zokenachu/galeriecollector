@@ -86,7 +86,7 @@ body {
 }
 
 /* Gallery Screen - Make it initially hidden */
-.gallery {
+#gallery {
   display: flex;
   flex-direction: column;
   justify-content: center;
