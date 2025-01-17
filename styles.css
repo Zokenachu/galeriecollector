@@ -82,7 +82,7 @@ body {
 }
 
 #gallery {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .gallery-grid {
