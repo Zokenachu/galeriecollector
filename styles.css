@@ -81,6 +81,10 @@ body {
   z-index: 2;
 }
 
+#gallery {
+  overflow: hidden;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
