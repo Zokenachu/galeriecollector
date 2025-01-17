@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Galerie Collector</title>
+  <title>Galerie Collector</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <div id="password-screen">
@@ -13,12 +14,11 @@
       Your browser does not support the video tag.
     </video>
     <h1>La Galerie Collector</h1>
-    <input type="password" id="password" placeholder="Mot de passe">
-    <button id="submit-password" onclick="checkPassword();">Accéder</button>
+    <input type="password" id="password-input" placeholder="Mot de passe">
+    <button id="submit-password">Confirmer</button>
     <p id="error-message"></p>
   </div>
 
-  <!-- Gallery Screen (Hidden initially) -->
   <div id="gallery" style="display: none;">
     <header>
       <h1>La Galerie Collector</h1>
