@@ -1,150 +1,167 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  height: 100vh;
-  overflow: hidden;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #303030;
 }
 
 #password-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  text-align: center;
-  color: white;
-  position: relative;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #303030;
 }
-
-#password-screen h1 {
-  margin-bottom: 20px;
-  color: white;
-  z-index: 20;
-}
-
-#password-screen input {
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 10px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  z-index: 20;
-}
-
-#password-screen button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 20;
-}
-
-#password-screen button:hover {
-  background-color: #0056b3;
-}
-
-#error-message {
-  color: red;
-  margin-top: 10px;
-  z-index: 20;
-}
-
+  
 #background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
-
-#password-screen::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  
+#password-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
+  
+#password-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+  
+#password-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+  
+#password-container input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+#password-container button {
+    padding: 10px 20px;
+    background-color: #6F6F6F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+#password-container button:hover {
+    background-color: #5e5e5e;
+}
+  
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+  
 
-#gallery {
-  overflow: scroll;
+#gallery-screen {
+    padding: 20px;
+    background-color: #303030;
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  margin: 0;
-  width: 100vw;
-  height: auto;
-  box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
 }
 
 .gallery-grid img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: transform 0.3s;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.05);
+.gallery-grid img:hover, .gallery-grid video:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
 }
+
+.gallery-grid video {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.gallery-grid .video-container {
+    position: relative;
+}
+
+.gallery-grid .video-container::after {
+    content: "▶";
+    font-size: 2.5em;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+.gallery-grid video:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}  
+
 
 #lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+#lightbox img, #lightbox video {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
 }
 
 #close-lightbox {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 #close-lightbox:hover {
-  color: red;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-  background-color: #007BFF;
-  color: white;
+    color: red;
 }
